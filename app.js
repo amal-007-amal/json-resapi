@@ -13,7 +13,7 @@ app.listen(port,()=>{
     console.log("Server listening on PORT:",port)
 })
 
-app.get('/getJsonDataFile',(req,res,next)=>{
+app.get('/api/getJsonDataFile',(req,res,next)=>{
     try {
         const readData = fsD.readFileSync('./data/temp.json',(err,data)=>{
             if(err!=null){
@@ -27,7 +27,7 @@ app.get('/getJsonDataFile',(req,res,next)=>{
 })
 
 
-app.post('/postJsonDataFile',(req,res,next)=>{
+app.post('/api/postJsonDataFile',(req,res,next)=>{
     try {
         fsD.writeFile('./data/temp.json',JSON.stringify(req.body,null),(error)=>{
             if(error!=null){
